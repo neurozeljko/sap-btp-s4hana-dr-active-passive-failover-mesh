@@ -178,4 +178,4 @@ X-DR-Processed-Region: US10-VIRGINIA-DR
 
 ---
 
-**Lead Integration Architect:** Željko Popov
+**Integration Architect:** Željko Popov
