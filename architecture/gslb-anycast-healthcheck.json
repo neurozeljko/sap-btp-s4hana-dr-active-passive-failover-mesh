@@ -1,0 +1,26 @@
+{
+  "globalServerLoadBalancer": {
+    "routingPolicy": "ANYCAST_ACTIVE_PASSIVE_FAILOVER",
+    "healthProbe": {
+      "protocol": "HTTPS",
+      "path": "/aerospace/v1/telemetry",
+      "intervalSeconds": 5,
+      "failureThreshold": 3,
+      "failoverTriggerCodes": [502, 503, 504]
+    },
+    "endpoints": [
+      {
+        "priority": 1,
+        "role": "PRIMARY",
+        "region": "eu10-frankfurt",
+        "targetHost": "integration-suite-eu10.it-cpi026-rt.cfapps.eu10-002.hana.ondemand.com"
+      },
+      {
+        "priority": 2,
+        "role": "DR_STANDBY",
+        "region": "us10-virginia",
+        "targetHost": "integration-suite-us10.it-cpi014-rt.cfapps.us10.hana.ondemand.com"
+      }
+    ]
+  }
+}

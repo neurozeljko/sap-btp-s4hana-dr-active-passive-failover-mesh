@@ -1,0 +1,18 @@
+{
+  "eventMeshReplicationTopology": {
+    "mode": "ACTIVE_PASSIVE_CROSS_REGION",
+    "primaryBroker": {
+      "region": "eu10-frankfurt",
+      "provider": "AWS",
+      "servicePlan": "SAP Advanced Event Mesh Enterprise",
+      "topicSubscription": "aerospace/telemetry/v1/>"
+    },
+    "secondaryDrBroker": {
+      "region": "us10-virginia",
+      "provider": "AWS",
+      "dmrLinkMode": "ASYNCHRONOUS_GUARANTEED",
+      "targetRpoSeconds": 1.5,
+      "replayDeduplicationStore": "Global-Redis-Enterprise-Active-Active"
+    }
+  }
+}
